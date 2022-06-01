@@ -3,8 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from urllib.parse import quote
 app = Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:%s@localhost:3306/empdb'%quote("Admin@123")
-
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:%s@localhost:3306/empdb'%quote("Admin@123")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///empdb.db'
 db = SQLAlchemy(app)
 
 class Student(db.Model):
